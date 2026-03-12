@@ -16,7 +16,7 @@ public class GrantController {
     private GrantService grantService;
 
     @RequestMapping(value = "/uploadGrants")
-    public AppResponseDTO processuploadGrant(@RequestBody List<GrantDTO> dtoList) {
+    public  @ResponseBody AppResponseDTO processuploadGrant(@RequestBody List<GrantDTO> dtoList) {
         return grantService.processUploadGrant(dtoList);
     }
 

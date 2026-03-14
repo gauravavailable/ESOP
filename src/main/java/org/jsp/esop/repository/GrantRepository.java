@@ -18,10 +18,10 @@ public interface GrantRepository extends JpaRepository<GrantEntity, BigInteger> 
     @Query(value = "from GrantEntity where planId=:planId")
     List<GrantEntity> getGrantsByPlanId(BigInteger planID);
 
-    @Query(value = "from GrantEntity where planId=:planId and grantStatus=:grantstatus and allocationStatus=:allocationstatus")
+    @Query(value = "from GrantEntity where planId=:planid and grantStatus=:grantstatus and allocationStatus=:allocationstatus")
     List<GrantEntity> processgetGrantByPlanIdAndGrantStatusAndAllocationStatus(
             @Param("grantstatus") String grantStatus,
-            @Param("planId") BigInteger planId,
+            @Param("planid") BigInteger planId,
             @Param("allocationstatus") String allocationStatus
     );
 

@@ -4,7 +4,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.jsp.esop.dto.GrantDTO;
 
 import java.math.BigInteger;
@@ -13,7 +15,10 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "grants_master")
+@AllArgsConstructor
+@NoArgsConstructor
 public class GrantEntity {
+
     @Id
     @Column(name = "alt_Key")
     private BigInteger altkey;

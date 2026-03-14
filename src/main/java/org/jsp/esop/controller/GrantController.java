@@ -16,6 +16,7 @@ public class GrantController {
     private GrantService grantService;
 
     @RequestMapping(value = "/uploadGrants")
+//  @GetMapping(value = "/uploadGrants")
     public  @ResponseBody AppResponseDTO processuploadGrant(@RequestBody List<GrantDTO> dtoList) {
         return grantService.processUploadGrant(dtoList);
     }
@@ -30,18 +31,18 @@ public class GrantController {
         return grantService.processGrantById(altKey);
     }
 
-    @RequestMapping("getGrantsByPlanId/{planId}")
+    @RequestMapping("/getGrantsByPlanId/{planId}")
     public AppResponseDTO getGrantsByPlanId(@PathVariable BigInteger planId){
         return grantService.processGrantsByPlanId(planId);
     }
 
-    @RequestMapping("getGrantsByPlanId/{planId}/{grantStatus}/{allocationStatus}")
+    @GetMapping("/getGrantsByPlanId/{planId}/{grantStatus}/{allocationStatus}")
     public AppResponseDTO getGrantByPlanIdAndGrantStatusAndAllocationStatus(
             @PathVariable("planId") BigInteger planId,
             @PathVariable("grantStatus") String grantStatus,
             @PathVariable("allocationStatus") String allocationStatus)
     {
-        return grantService.processGrantsByPlanId(planId);
+        return grantService.processgetGrantByPlanIdAndGrantStatusAndAllocationStatus(planId,grantStatus,allocationStatus);
     }
 
     @RequestMapping("/approvedGrant")

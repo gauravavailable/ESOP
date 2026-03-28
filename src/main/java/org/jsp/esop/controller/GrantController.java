@@ -1,16 +1,23 @@
 package org.jsp.esop.controller;
 
+import lombok.NoArgsConstructor;
 import org.jsp.esop.dto.AppResponseDTO;
 import org.jsp.esop.dto.GrantDTO;
 import org.jsp.esop.service.GrantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigInteger;
 import java.util.List;
 
 @RestController
+@Component
 public class GrantController {
+
+    GrantController() {
+        System.out.println("GrantController has been created");
+    }
 
     @Autowired
     private GrantService grantService;

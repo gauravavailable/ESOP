@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Component
 public class PlanController {
 
-    public PlanController() {
-        System.out.println("PlanController has been created");
+    public PlanController(PlanService planService) {
+        this.planService = planService;
+        System.out.println("PlanController");
     }
 
     @Autowired
